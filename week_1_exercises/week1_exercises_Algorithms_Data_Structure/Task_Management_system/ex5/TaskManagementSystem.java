@@ -4,18 +4,15 @@ public class TaskManagementSystem {
     static class Node {
         Task task;
         Node next;
-
         Node(Task task) {
             this.task = task;
             this.next = null;
         }
     }
     private Node head;
-
     public TaskManagementSystem() {
         this.head = null;
     }
-
     public void addTask(Task task) {
         Node newNode = new Node(task);
         if (head == null) {
@@ -68,11 +65,9 @@ public class TaskManagementSystem {
         }
         return false;
     }
-
     public static void main(String[] args) {
         TaskManagementSystem taskMgmt = new TaskManagementSystem();
-        Scanner scanner = new Scanner(System.in);
-
+        Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("\nTask Management System:");
             System.out.println("1. Add Task");
@@ -81,26 +76,23 @@ public class TaskManagementSystem {
             System.out.println("4. Delete Task");
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
-
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-
+            int choice = sc.nextInt();
+            sc.nextLine(); 
             switch (choice) {
                 case 1:
                 	System.out.print("Enter Task ID: ");
-                    String id = scanner.nextLine();
+                    String id = sc.nextLine();
                     System.out.print("Enter Task Name: ");
-                    String name = scanner.nextLine();
+                    String name = sc.nextLine();
                     System.out.print("Enter Status: ");
-                    String status = scanner.nextLine();
-
+                    String status = sc.nextLine();
                     Task task = new Task(id, name, status);
                     taskMgmt.addTask(task);
                     System.out.println("Task added successfully.");
                     break;
                 case 2:
                 	System.out.print("Enter Task ID to search: ");
-                    String id1 = scanner.nextLine();
+                    String id1 = sc.nextLine();
                     Task task1 = taskMgmt.searchTask(id1);
                     if (task1 != null) {
                         System.out.println("Task found: " + task1);
@@ -113,7 +105,7 @@ public class TaskManagementSystem {
                     break;
                 case 4:
                 	System.out.print("Enter Task ID to delete: ");
-                    String id2 = scanner.nextLine();
+                    String id2 = sc.nextLine();
                     boolean isDeleted = taskMgmt.deleteTask(id2);
                     if (isDeleted) {
                         System.out.println("Task deleted successfully.");
@@ -123,7 +115,7 @@ public class TaskManagementSystem {
                     break;
                 case 5:
                     System.out.println("Exiting...");
-                    scanner.close();
+                    sc.close();
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
