@@ -2,7 +2,6 @@ package ex7;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
 public class FinancilaForecasting {
     private static Map<Integer, Double> memo = new HashMap<>();
     public static double predictFutureValue(double initialValue, double growthRate, int years) {
@@ -27,7 +26,7 @@ public class FinancilaForecasting {
         System.out.print("Enter the number of years to forecast: ");
         int years = sc.nextInt();
         double futureValue = predictFutureValue(initialValue, growthRate, years);
-        System.out.println("The predicted future value is: $" + String.format("%.2f", futureValue));
+        System.out.println("The predicted future value is: $" +futureValue);
         sc.close();
     }
 }
