@@ -1,0 +1,4 @@
+librarymanagement\LibraryManagementApplication.class
+librarymanagement\Book.class
+librarymanagement\BookRepository.class
+librarymanagement\BookService.class
